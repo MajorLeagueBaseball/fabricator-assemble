@@ -468,6 +468,7 @@ var parseData = function () {
 		assembly.data[id] = content;
 	});
 
+	assembly.data = _.merge(assembly.data, options.externalData);
 };
 
 
