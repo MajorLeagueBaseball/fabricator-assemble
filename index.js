@@ -602,6 +602,7 @@ var setup = function (userOptions) {
 
 	// setup steps
 	registerHelpers();
+	registerExternalPartials();
 	parseLayouts();
 	parseLayoutIncludes();
 	parseData();
