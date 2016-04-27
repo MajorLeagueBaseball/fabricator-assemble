@@ -579,6 +579,19 @@ var registerHelpers = function () {
 
 
 /**
+ * Register external Handlebars partials
+ */
+var registerExternalPartials = function registerExternalPartials() {
+	var externalPartials = options.externalPartials;
+
+	Object.keys(externalPartials).forEach(function(name) {
+		var partial = externalPartials[name];
+		Handlebars.registerPartial(name, partial);
+	});
+}
+
+
+/**
  * Setup the assembly
  * @param  {Objet} options  User options
  */
