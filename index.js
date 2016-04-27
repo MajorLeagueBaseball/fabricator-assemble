@@ -97,7 +97,13 @@ var defaults = {
 	 * Whether or not to log errors to console
 	 * @type {Boolean}
 	 */
-	logErrors: false
+	logErrors: false,
+
+	/**
+	 * External JSON or YAML data models that are piped into views
+	 * @type {Object}
+	 */
+	 externalData: {}
 };
 
 
