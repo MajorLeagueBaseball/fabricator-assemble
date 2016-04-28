@@ -97,7 +97,13 @@ var defaults = {
 	 * Whether or not to log errors to console
 	 * @type {Boolean}
 	 */
-	logErrors: false
+	logErrors: false,
+
+	 /**
+	 * External partials
+	 * @type {Object}
+	 */
+	 externalPartials: {}
 };
 
 
@@ -573,6 +579,19 @@ var registerHelpers = function () {
 
 
 /**
+ * Register external Handlebars partials
+ */
+var registerExternalPartials = function registerExternalPartials() {
+	var externalPartials = options.externalPartials;
+
+	Object.keys(externalPartials).forEach(function(name) {
+		var partial = externalPartials[name];
+		Handlebars.registerPartial(name, partial);
+	});
+}
+
+
+/**
  * Setup the assembly
  * @param  {Objet} options  User options
  */
@@ -583,6 +602,7 @@ var setup = function (userOptions) {
 
 	// setup steps
 	registerHelpers();
+	registerExternalPartials();
 	parseLayouts();
 	parseLayoutIncludes();
 	parseData();
