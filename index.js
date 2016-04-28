@@ -103,7 +103,7 @@ var defaults = {
 	 * External partials
 	 * @type {Object}
 	 */
-	 externalPartials: {}
+	 externalPartials: {},
 
 	/**
 	 * External JSON or YAML data models that are piped into views
