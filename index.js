@@ -104,6 +104,12 @@ var defaults = {
 	 * @type {Object}
 	 */
 	 externalPartials: {}
+
+	/**
+	 * External JSON or YAML data models that are piped into views
+	 * @type {Object}
+	 */
+	 externalData: {}
 };
 
 
@@ -468,6 +474,7 @@ var parseData = function () {
 		assembly.data[id] = content;
 	});
 
+	assembly.data = _.merge(assembly.data, options.externalData);
 };
 
 
